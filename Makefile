@@ -49,6 +49,10 @@ capi:
 install:
 	mkdir -p "$(DESTDIR)$(prefix)/include/uWebSockets/f2"
 	cp -r src/* "$(DESTDIR)$(prefix)/include/uWebSockets"
+	cp uSockets/src/libusockets.h "$(DESTDIR)$(prefix)/include"
+
+	mkdir -p "$(DESTDIR)$(prefix)/lib"
+	cp uSockets/uSockets.a "$(DESTDIR)$(prefix)/lib/libusockets.a"
 
 all:
 	$(MAKE) examples
